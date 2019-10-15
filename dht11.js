@@ -1,6 +1,6 @@
 const path = require('path')
 const spawn = require('child_process').spawn
-const pythonScriptPath = path.resolve(__dirname, './Adafruit_Pythong_DHT/examples/AdafruitDHT.py')
+const pythonScriptPath = path.resolve(__dirname, './Adafruit_Python_DHT/examples/AdafruitDHT.py')
 const SENSOR = '11' // DHT11 module
 // const PIN = '4' // GPIO pin on pi
 // const FREQUENCY = 5 // seconds between each reading
