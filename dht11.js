@@ -1,6 +1,6 @@
 const path = require('path')
 const spawn = require('child_process').spawn
-const pythonScriptPath = path.resolve(__dirname, './Adafruit_Pythong_DHT/examples/AdafruitDHT.py')
+const pythonScriptPath = path.resolve(__dirname, './Adafruit_Python_DHT/examples/AdafruitDHT.py')
 const SENSOR = '11' // DHT11 module
 // const PIN = '4' // GPIO pin on pi
 // const FREQUENCY = 5 // seconds between each reading
@@ -9,6 +9,7 @@ function getTemperature (pinOnPi) {
   return new Promise((resolve, reject) => {
     const pythonProcess = spawn('python', [pythonScriptPath, SENSOR, pinOnPi])
     const killTimeout = setTimeout(() => {
+      console.log('killing existing python process ...')
       pythonProcess.kill()
       reject()
     }, 5 * 30 * 1000)
